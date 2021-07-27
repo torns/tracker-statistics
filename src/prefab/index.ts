@@ -1,17 +1,17 @@
 import sdkVersion from './sdk-version'
 import userAgent from './user-agent'
-import browser from './browser'
+import browserName from './browser-name'
 
 interface Prefab {
   sdkVersion: string
   userAgent: string
-  browser: string
+  browserName: string
 }
 
 const prefab: Prefab = {
   sdkVersion,
   userAgent,
-  browser
+  browserName
 }
 
 export { prefab }
