@@ -1,4 +1,4 @@
-import { prefab } from './prefab'
+import prefab from './prefab'
 
 const trackerStatistics = () => {
   console.log(prefab)

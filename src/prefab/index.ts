@@ -1,20 +1,17 @@
-import sdkVersion from './sdk-version'
-import userAgent from './user-agent'
-import browserName from './browser-name'
-import browserVersion from './browser-version'
+// @ts-ignore
+import * as pkg from '../../package.json'
+import UAParser, { IResult } from 'ua-parser-js'
 
-interface Prefab {
+interface Prefab extends IResult {
   sdkVersion: string
-  userAgent: string
-  browserName: string
-  browserVersion: string
+  network: string
 }
 
-const prefab: Prefab = {
-  sdkVersion,
-  userAgent,
-  browserName,
-  browserVersion
-}
+const parser = new UAParser()
+const _navigator: any = navigator
+const prefab = parser.getResult() as Prefab
 
-export { prefab }
+prefab['sdkVersion'] = pkg.version
+prefab['network'] = _navigator.connection ? _navigator.connection.effectiveType : ''
+
+export default prefab

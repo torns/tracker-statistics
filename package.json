@@ -1,6 +1,6 @@
 {
   "name": "tracker-statistics",
-  "version": "0.1.17",
+  "version": "0.2.0",
   "description": "一个能够跟踪用户行为的统计工具",
   "keywords": [
     "tracker-statistics",
@@ -130,6 +130,8 @@
     "vue-tsc": "^0.2.2"
   },
   "dependencies": {
-    "tracker-statistics": "^0.1.17"
+    "@types/ua-parser-js": "^0.7.36",
+    "tracker-statistics": "^0.1.17",
+    "ua-parser-js": "^0.7.28"
   }
 }
