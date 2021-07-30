@@ -131,6 +131,7 @@
   },
   "dependencies": {
     "@types/ua-parser-js": "^0.7.36",
+    "axios": "^0.21.1",
     "tracker-statistics": "^0.1.17",
     "ua-parser-js": "^0.7.28"
   }
