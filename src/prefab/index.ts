@@ -38,7 +38,7 @@ const prefab = parser.getResult() as Prefab
 
 prefab['sdkVersion'] = pkg.version
 prefab['network'] = _navigator.connection ? _navigator.connection.effectiveType : undefined
-prefab['referrer'] = window.document.referrer
+prefab['referrer'] = window.document.referrer // 前一个页面
 prefab['url'] = url
 
 export default prefab

@@ -4,8 +4,18 @@ const login = () => {
   return namespace.entry.login
 }
 
+const register = () => {
+  return namespace.entry.register
+}
+
+const logout = () => {
+  return namespace.entry.logout
+}
+
 const entry = {
-  login
+  login,
+  register,
+  logout
 }
 
 export default entry
