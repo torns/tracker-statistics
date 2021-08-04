@@ -21,6 +21,7 @@ interface Prefab extends IResult {
   network: string
   url: Url
   referrer: string
+  timestamp: number
 }
 
 const parser = new UAParser()
@@ -43,6 +44,7 @@ prefab.sdkVersion = pkg.version
 prefab.network = _navigator.connection ? _navigator.connection.effectiveType : undefined
 prefab.referrer = window.document.referrer // 前一个页面
 prefab.url = url
+prefab.timestamp = new Date().getTime()
 prefab.usageMethod = undefined // TODO：后续会根据一个接口进行判断是代码埋点还是可视化埋点
 
 export default prefab // TODO: 在发送接口时候混入进去
