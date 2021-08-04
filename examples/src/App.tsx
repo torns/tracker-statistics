@@ -1,14 +1,16 @@
 import { defineComponent } from 'vue'
 // import trackerStatistics from 'tracker-statistics'
-import trackerStatistics from '../../src/tracker-statistics'
+import { trackerStatistics, prefab } from '../../src/tracker-statistics'
 
 const App = defineComponent({
   name: 'App',
   render() {
-    trackerStatistics()
+    const onClick = () => {
+      console.log({ extend: trackerStatistics.extend.code.entry.login(), prefab })
+    }
 
     return (
-      <div>123</div>
+      <div onClick={ onClick }>看这，看这，点我</div>
     )
   }
 })

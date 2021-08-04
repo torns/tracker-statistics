@@ -1,7 +1,8 @@
+import extend from './extend'
 import prefab from './prefab'
 
-const trackerStatistics = () => {
-  console.log(prefab)
+const trackerStatistics = {
+  extend
 }
 
-export default trackerStatistics
+export { trackerStatistics, prefab }

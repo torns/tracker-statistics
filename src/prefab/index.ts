@@ -2,6 +2,8 @@
 import * as pkg from '../../package.json'
 import UAParser, { IResult } from 'ua-parser-js'
 
+type UsageMethod = 'code' | 'visualization' | undefined
+
 interface Url {
   href: string
   protocol: string
@@ -15,6 +17,7 @@ interface Url {
 
 interface Prefab extends IResult {
   sdkVersion: string
+  usageMethod: UsageMethod
   network: string
   url: Url
   referrer: string
@@ -36,9 +39,10 @@ const url: Url = {
 
 const prefab = parser.getResult() as Prefab
 
-prefab['sdkVersion'] = pkg.version
-prefab['network'] = _navigator.connection ? _navigator.connection.effectiveType : undefined
-prefab['referrer'] = window.document.referrer // 前一个页面
-prefab['url'] = url
+prefab.sdkVersion = pkg.version
+prefab.network = _navigator.connection ? _navigator.connection.effectiveType : undefined
+prefab.referrer = window.document.referrer // 前一个页面
+prefab.url = url
+prefab.usageMethod = undefined // TODO：后续会根据一个接口进行判断是代码埋点还是可视化埋点
 
-export default prefab
+export default prefab // TODO: 在发送接口时候混入进去
