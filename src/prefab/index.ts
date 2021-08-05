@@ -15,8 +15,7 @@ interface Url {
   hash: string
 }
 
-interface Prefab {
-  prefab: IResult
+interface Prefab extends IResult {
   sdkVersion: string
   usageMethod: UsageMethod
   network: string
@@ -50,7 +49,7 @@ const url: Url = {
 
 const prefab = () => {
   return {
-    prefab: parser.getResult(),
+    ...parser.getResult(),
     sdkVersion: pkg.version,
     network: _navigator.connection ? _navigator.connection.effectiveType : undefined,
     referrer: window.document.referrer, // 前一个页面
