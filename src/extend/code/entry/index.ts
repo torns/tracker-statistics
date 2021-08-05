@@ -1,15 +1,15 @@
 import entryNamespace from './namespace'
 
 const login = (data?: object) => {
-  return Object.assign(entryNamespace.login, { data })
+  return { ...entryNamespace.login, ...{ data } }
 }
 
 const register = (data?: object) => {
-  return Object.assign(entryNamespace.register, { data })
+  return { ...entryNamespace.register, ...{ data } }
 }
 
 const logout = (data?: object) => {
-  return Object.assign(entryNamespace.logout, { data })
+  return { ...entryNamespace.logout, ...{ data } }
 }
 
 const entry = {

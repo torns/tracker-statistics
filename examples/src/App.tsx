@@ -6,7 +6,10 @@ const App = defineComponent({
   name: 'App',
   render() {
     const onClick = () => {
-      console.log({ extend: trackerStatistics.extend.code.entry.login(), prefab: prefab() })
+      console.log({ extend: trackerStatistics.extend.code.entry.login({ a: 8 }), prefab: prefab() })
+      setTimeout(() => {
+        console.log({ extend: trackerStatistics.extend.code.entry.login(), prefab: prefab() })
+      }, 3000)
     }
 
     return (
