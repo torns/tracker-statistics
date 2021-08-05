@@ -26,16 +26,19 @@ interface Prefab extends IResult {
 
 const parser = new UAParser()
 const _navigator: any = navigator
-const _location: Url = window.location
-const url: Url = {
-  href: _location.href,
-  protocol: _location.protocol,
-  host: _location.host,
-  hostname: _location.hostname,
-  port: _location.port,
-  pathname: _location.pathname,
-  search: _location.search,
-  hash: _location.hash
+const url = () => {
+  const _location: Url = window.location
+
+  return {
+    href: _location.href,
+    protocol: _location.protocol,
+    host: _location.host,
+    hostname: _location.hostname,
+    port: _location.port,
+    pathname: _location.pathname,
+    search: _location.search,
+    hash: _location.hash
+  }
 }
 
 // const prefab = parser.getResult() as Prefab
@@ -47,13 +50,13 @@ const url: Url = {
 // prefab.timestamp = new Date().getTime()
 // prefab.usageMethod = undefined // TODO：后续会根据一个接口进行判断是代码埋点还是可视化埋点
 
-const prefab = () => {
+const prefab = (): Prefab => {
   return {
     ...parser.getResult(),
     sdkVersion: pkg.version,
     network: _navigator.connection ? _navigator.connection.effectiveType : undefined,
     referrer: window.document.referrer, // 前一个页面
-    url,
+    url: url(),
     timestamp: new Date().getTime(),
     usageMethod: undefined
   }
