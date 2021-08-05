@@ -1,7 +1,9 @@
 import entry from './entry'
+import mall from './mall'
 
 const code = {
-  entry
+  entry,
+  mall
 }
 
 export default code
