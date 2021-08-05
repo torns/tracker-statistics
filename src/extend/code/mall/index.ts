@@ -2,10 +2,16 @@ import mallNamespace from './namespace'
 
 const shop = {
   list: (data?: object) => {
-    return { behavior: mallNamespace.shop.list, ...{ data } }
+    return { behavior: mallNamespace.shop.list, ...{ data } } // 如果要区分全部商品列表或搜索的商品列表，可以使用data进行扩展
+  },
+  categoryList: (data?: object) => {
+    return { behavior: mallNamespace.shop.categoryList, ...{ data } }
   },
   detail: (id: number | string, title: string, data?: object) => {
     return { behavior: mallNamespace.shop.detail, id, title, ...{ data } }
+  },
+  search: (content: string, data?: object) => {
+    return { behavior: mallNamespace.shop.search, content, ...{ data } }
   },
   cart: (id: number | string, title: string, data?: object) => {
     return { behavior: mallNamespace.shop.cart, id, title, ...{ data } }
@@ -29,6 +35,15 @@ const shop = {
     return { behavior: mallNamespace.shop.comment, id, title, ...{ data } }
   }
 }
+
+// const setting = {
+//   terms: (data?: object) => {
+//     return { behavior: mallNamespace.setting.terms, ...{ data } }
+//   },
+//   policy: (data?: object) => {
+//     return { behavior: mallNamespace.setting.policy, ...{ data } }
+//   }
+// }
 
 const mall = {
   shop
