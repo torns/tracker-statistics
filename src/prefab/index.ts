@@ -15,7 +15,8 @@ interface Url {
   hash: string
 }
 
-interface Prefab extends IResult {
+interface Prefab {
+  prefab: IResult
   sdkVersion: string
   usageMethod: UsageMethod
   network: string
@@ -38,13 +39,25 @@ const url: Url = {
   hash: _location.hash
 }
 
-const prefab = parser.getResult() as Prefab
+// const prefab = parser.getResult() as Prefab
+//
+// prefab.sdkVersion = pkg.version
+// prefab.network = _navigator.connection ? _navigator.connection.effectiveType : undefined
+// prefab.referrer = window.document.referrer // 前一个页面
+// prefab.url = url
+// prefab.timestamp = new Date().getTime()
+// prefab.usageMethod = undefined // TODO：后续会根据一个接口进行判断是代码埋点还是可视化埋点
 
-prefab.sdkVersion = pkg.version
-prefab.network = _navigator.connection ? _navigator.connection.effectiveType : undefined
-prefab.referrer = window.document.referrer // 前一个页面
-prefab.url = url
-prefab.timestamp = new Date().getTime()
-prefab.usageMethod = undefined // TODO：后续会根据一个接口进行判断是代码埋点还是可视化埋点
+const prefab = () => {
+  return {
+    prefab: parser.getResult(),
+    sdkVersion: pkg.version,
+    network: _navigator.connection ? _navigator.connection.effectiveType : undefined,
+    referrer: window.document.referrer, // 前一个页面
+    url,
+    timestamp: new Date().getTime(),
+    usageMethod: undefined
+  }
+}
 
 export default prefab // TODO: 在发送接口时候混入进去
