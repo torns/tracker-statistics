@@ -4,6 +4,9 @@ const shop = {
   list: (data?: object) => {
     return { behavior: mallNamespace.shop.list, ...{ data } } // 如果要区分全部商品列表或搜索的商品列表，可以使用data进行扩展
   },
+  filterList: (name: string, sort: string | undefined = undefined, data?: object) => {
+    return { behavior: mallNamespace.shop.filterList, name, sort, ...{ data } }
+  },
   categoryList: (data?: object) => {
     return { behavior: mallNamespace.shop.categoryList, ...{ data } }
   },
