@@ -1,33 +1,52 @@
-import Namespace from '../interface'
+import { Namespace, BaseReturn, DataProps } from '../interface'
 
-interface MallShopNamespace {
-  list: Namespace
-  filterList: Namespace
-  categoryList: Namespace
-  detail: Namespace
-  search: Namespace
-  cart: Namespace
-  buy: Namespace
-  collect: Namespace
-  uncollect: Namespace
-  share: Namespace
-  qa: Namespace
-  comment: Namespace
+interface FilterReturn extends BaseReturn {
+  name: string
+  sort: string | undefined
 }
 
-interface MallOrderNamespace {
-  list: Namespace
-  detail: Namespace
+interface SearchReturn extends BaseReturn {
+  content: string
+}
+
+interface DetailReturn extends BaseReturn {
+  id: string | number
+  title: string
+}
+
+interface FilterAchieve {
+  <Opt extends FilterReturn>(
+    name: string,
+    sort: string | undefined,
+    data?: DataProps | undefined
+  ): FilterReturn
+}
+
+interface SearchAchieve {
+  <Opt extends SearchReturn>(content: string, data?: DataProps | undefined): SearchReturn
+}
+
+interface DetailAchieve {
+  <Opt extends DetailReturn>(
+    id: string | number,
+    title: string,
+    data?: DataProps | undefined
+  ): DetailReturn
 }
 
 interface MallNamespace {
-  shop: MallShopNamespace
-  order: MallOrderNamespace
-  shoppingCart: Namespace
-  collectList: Namespace
-  terms: Namespace
-  policy: Namespace
-  contactUs: Namespace
+  shopList: Namespace
+  shopFilterList: Namespace
+  shopCategoryList: Namespace
+  shopDetail: Namespace
+  shopSearch: Namespace
+  shopCart: Namespace
+  shopBuy: Namespace
+  shopCollect: Namespace
+  shopUncollect: Namespace
+  shopShare: Namespace
+  shopQa: Namespace
+  shopComment: Namespace
 }
 
-export default MallNamespace
+export { MallNamespace, FilterAchieve, SearchAchieve, DetailAchieve }

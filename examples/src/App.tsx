@@ -6,7 +6,7 @@ const App = defineComponent({
   name: 'App',
   render() {
     const onClick = () => {
-      console.log({ extend: trackerStatistics.extend.code.mall.shop.detail(5, 'asdfad', { b: 7 }), prefab: prefab() })
+      console.log({ extend: trackerStatistics.extend.code.mall.shopDetail(5, 'asdfad', { b: 7 }), prefab: prefab() })
     }
 
     return (

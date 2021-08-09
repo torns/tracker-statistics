@@ -1,55 +1,68 @@
 import mallNamespace from './namespace'
+import { BaseAchieve } from '../interface'
+import { DetailAchieve, FilterAchieve, SearchAchieve } from './interface'
 
-const shop = {
-  list: (data?: object) => {
-    return { behavior: mallNamespace.shop.list, ...{ data } } // 如果要区分全部商品列表或搜索的商品列表，可以使用data进行扩展
-  },
-  filterList: (name: string, sort: string | undefined = undefined, data?: object) => {
-    return { behavior: mallNamespace.shop.filterList, name, sort, ...{ data } }
-  },
-  categoryList: (data?: object) => {
-    return { behavior: mallNamespace.shop.categoryList, ...{ data } }
-  },
-  detail: (id: number | string, title: string, data?: object) => {
-    return { behavior: mallNamespace.shop.detail, id, title, ...{ data } }
-  },
-  search: (content: string, data?: object) => {
-    return { behavior: mallNamespace.shop.search, content, ...{ data } }
-  },
-  cart: (id: number | string, title: string, data?: object) => {
-    return { behavior: mallNamespace.shop.cart, id, title, ...{ data } }
-  },
-  buy: (id: number | string, title: string, data?: object) => {
-    return { behavior: mallNamespace.shop.buy, id, title, ...{ data } }
-  },
-  collect: (id: number | string, title: string, data?: object) => {
-    return { behavior: mallNamespace.shop.collect, id, title, ...{ data } }
-  },
-  uncollect: (id: number | string, title: string, data?: object) => {
-    return { behavior: mallNamespace.shop.uncollect, id, title, ...{ data } }
-  },
-  share: (id: number | string, title: string, data?: object) => {
-    return { behavior: mallNamespace.shop.share, id, title, ...{ data } }
-  },
-  qa: (id: number | string, title: string, data?: object) => {
-    return { behavior: mallNamespace.shop.qa, id, title, ...{ data } }
-  },
-  comment: (id: number | string, title: string, data?: object) => {
-    return { behavior: mallNamespace.shop.comment, id, title, ...{ data } }
-  }
+const shopList: BaseAchieve = data => {
+  return { behavior: mallNamespace.shopList, ...{ data } } // 如果要区分全部商品列表或搜索的商品列表，可以使用data进行扩展
 }
 
-// const setting = {
-//   terms: (data?: object) => {
-//     return { behavior: mallNamespace.setting.terms, ...{ data } }
-//   },
-//   policy: (data?: object) => {
-//     return { behavior: mallNamespace.setting.policy, ...{ data } }
-//   }
-// }
+const shopFilterList: FilterAchieve = (name, sort, data) => {
+  return { behavior: mallNamespace.shopFilterList, name, sort, ...{ data } }
+}
+
+const shopCategoryList: BaseAchieve = data => {
+  return { behavior: mallNamespace.shopCategoryList, ...{ data } }
+}
+
+const shopDetail: DetailAchieve = (id, title, data) => {
+  return { behavior: mallNamespace.shopDetail, id, title, ...{ data } }
+}
+
+const shopSearch: SearchAchieve = (content, data) => {
+  return { behavior: mallNamespace.shopSearch, content, ...{ data } }
+}
+
+const shopCart: DetailAchieve = (id, title, data) => {
+  return { behavior: mallNamespace.shopCart, id, title, ...{ data } }
+}
+
+const shopBuy: DetailAchieve = (id, title, data) => {
+  return { behavior: mallNamespace.shopBuy, id, title, ...{ data } }
+}
+
+const shopCollect: DetailAchieve = (id, title, data) => {
+  return { behavior: mallNamespace.shopCollect, id, title, ...{ data } }
+}
+
+const shopUncollect: DetailAchieve = (id, title, data) => {
+  return { behavior: mallNamespace.shopUncollect, id, title, ...{ data } }
+}
+
+const shopShare: DetailAchieve = (id, title, data) => {
+  return { behavior: mallNamespace.shopShare, id, title, ...{ data } }
+}
+
+const shopQa: DetailAchieve = (id, title, data) => {
+  return { behavior: mallNamespace.shopQa, id, title, ...{ data } }
+}
+
+const shopComment: DetailAchieve = (id, title, data) => {
+  return { behavior: mallNamespace.shopComment, id, title, ...{ data } }
+}
 
 const mall = {
-  shop
+  shopList,
+  shopFilterList,
+  shopCategoryList,
+  shopDetail,
+  shopSearch,
+  shopCart,
+  shopBuy,
+  shopCollect,
+  shopUncollect,
+  shopShare,
+  shopQa,
+  shopComment
 }
 
 export default mall

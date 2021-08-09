@@ -1,14 +1,15 @@
 import entryNamespace from './namespace'
+import { BaseAchieve } from '../interface'
 
-const login = (data?: object) => {
+const login: BaseAchieve = data => {
   return { behavior: entryNamespace.login, ...{ data } }
 }
 
-const register = (data?: object) => {
+const register: BaseAchieve = data => {
   return { behavior: entryNamespace.register, ...{ data } }
 }
 
-const logout = (data?: object) => {
+const logout: BaseAchieve = data => {
   return { behavior: entryNamespace.logout, ...{ data } }
 }
 

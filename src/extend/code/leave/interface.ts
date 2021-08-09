@@ -1,4 +1,4 @@
-import Namespace from '../interface'
+import { Namespace } from '../interface'
 
 interface LeaveNamespace {
   page: Namespace

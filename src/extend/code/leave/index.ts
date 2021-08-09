@@ -1,9 +1,12 @@
 import leaveNamespace from './namespace'
+import { BaseAchieve } from '../interface'
+
+const leavePage: BaseAchieve = data => {
+  return { behavior: leaveNamespace.page, ...{ data } }
+}
 
 const leave = {
-  page: (data?: object) => {
-    return { behavior: leaveNamespace.page, ...{ data } }
-  }
+  leavePage
 }
 
 export default leave
