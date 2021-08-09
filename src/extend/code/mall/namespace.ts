@@ -1,4 +1,6 @@
-const mallNamespace = {
+import MallNamespace from './interface'
+
+const mallNamespace: MallNamespace = {
   shop: {
     list: { name: 'shop-list', cname: '浏览商品列表', type: 'browse' },
     filterList: { name: 'shop-filter-list', cname: '点击商品列表筛选', type: 'click' },
