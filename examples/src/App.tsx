@@ -7,6 +7,10 @@ const App = defineComponent({
   render() {
     const onClick = () => {
       console.log({ extend: trackerStatistics.extend.code.mall.shopDetail(5, 'asdfad', { b: 7 }), prefab: prefab() })
+
+      setTimeout(() => {
+        console.log({ extend: trackerStatistics.extend.code.leave.leavePage(), prefab: prefab() })
+      }, 2000)
     }
 
     return (
