@@ -4,9 +4,7 @@ import prefab from '../../prefab'
 const stay = (isPrefab: boolean = true, data?: object) => {
   const obj = {
     type: EventType.stay,
-    stayDate:
-      prefab().timestamp -
-      JSON.parse(window.sessionStorage.getItem('tempListInfo') as string).prefab.timestamp,
+    stayDate: '',
     ...{ data },
     ...{ prefab: isPrefab ? prefab() : {} }
   }
