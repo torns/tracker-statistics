@@ -1,5 +1,4 @@
 import axios, { AxiosError, AxiosRequestConfig, AxiosResponse } from 'axios'
-import prefab from '../prefab'
 
 const baseRequestConfig: AxiosRequestConfig = {
   timeout: 6000
@@ -12,8 +11,6 @@ const err = (error: AxiosError): Promise<AxiosError> => {
 }
 
 service.interceptors.request.use((config: AxiosRequestConfig): AxiosRequestConfig => {
-  config.data['prefab'] = prefab
-
   return config
 }, err)
 

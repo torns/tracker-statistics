@@ -1,16 +1,16 @@
 import { defineComponent } from 'vue'
 // import trackerStatistics from 'tracker-statistics'
-import { trackerStatistics, prefab } from '../../src/tracker-statistics'
+import trackerStatistics from '../../src/tracker-statistics'
 
 const App = defineComponent({
   name: 'App',
   render() {
     const onClick = () => {
-      console.log({ extend: trackerStatistics.extend.code.mall.shopDetail(5, 'asdfad', { b: 7 }), prefab: prefab() })
+      console.log(trackerStatistics.expose.list('shop'))
 
       setTimeout(() => {
-        console.log({ extend: trackerStatistics.extend.code.leave.leavePage(), prefab: prefab() })
-      }, 2000)
+        console.log(trackerStatistics.stay())
+      }, 1000)
     }
 
     return (
