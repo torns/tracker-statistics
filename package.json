@@ -132,6 +132,7 @@
   "dependencies": {
     "@types/ua-parser-js": "^0.7.36",
     "axios": "^0.21.1",
+    "lodash": "^4.17.21",
     "tracker-statistics": "^0.1.17",
     "ua-parser-js": "^0.7.28",
     "vconsole": "^3.9.1"

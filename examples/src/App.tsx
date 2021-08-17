@@ -1,18 +1,15 @@
-import { defineComponent } from 'vue'
+import { defineComponent, onMounted } from 'vue'
 // import trackerStatistics from 'tracker-statistics'
 import trackerStatistics from '../../src/tracker-statistics'
 
 const App = defineComponent({
   name: 'App',
+  setup() {
+    onMounted(() => {
+      trackerStatistics.expose('shop', 'fuji')
+    })
+  },
   render() {
-    const onClick = () => {
-      // console.log(trackerStatistics.expose('shop', 1))
-
-      // setTimeout(() => {
-      //   console.log(trackerStatistics.stay())
-      // }, 1000)
-    }
-
     const list = [
       { name: '看这，看这，点我', id: 1 },
       { name: '看这，看这，点我', id: 11 },
@@ -32,11 +29,10 @@ const App = defineComponent({
     ]
 
     return (
-      <div id="fuji">
+      <div id="fuji" style={ { height: '500px', width: '200px', backgroundColor: 'pink', overflow: 'scroll' } }>
         {
           list.map(item => {
-            trackerStatistics.expose('shop', item.id, 'fuji')
-            return  <div style={ { height: '200px', width: '100%' } } onClick={ onClick }>{ item.name }</div>
+            return <div style={ { height: '200px', width: '100%' } } data-id={ item.id }>{ '(' + item.id + ')' + item.name }</div>
           })
         }
       </div>
