@@ -18,6 +18,7 @@ const onScroll = (e: Event, dom: HTMLElement) => {
     const itemTop: number = d.getBoundingClientRect().top
     const itemLeft: number = d.getBoundingClientRect().left
 
+    // 滚动距离大于节点高度时减掉一份节点高度，计算容器可是区域内的第一个节点的位置
     if (scrollTop > itemHeight + itemTop) {
       scrollTop -= itemHeight
     }

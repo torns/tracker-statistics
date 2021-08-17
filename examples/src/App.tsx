@@ -29,7 +29,7 @@ const App = defineComponent({
     ]
 
     return (
-      <div id="fuji" style={ { height: '500px', width: '200px', backgroundColor: 'pink', overflow: 'scroll' } }>
+      <div id="fuji" style={ { height: '100vh', width: '200px', backgroundColor: 'pink', overflow: 'scroll' } }>
         {
           list.map(item => {
             return <div style={ { height: '200px', width: '100%' } } data-id={ item.id }>{ '(' + item.id + ')' + item.name }</div>
