@@ -16,8 +16,10 @@ const onScroll = (e: Event, dom: HTMLElement) => {
   const minWidth: number = dom!.clientWidth <= innerWidth ? dom!.clientWidth : innerWidth // 当前父容器的款度
   let scrollTop: number = dom!.scrollTop // 当前父容器的滚动距离
   let status: boolean = true // 控制当前可视区域的内容是否在一小时内被曝光过
+  let prevTimeStamp: number =
+    JSON.parse(window.sessionStorage.getItem('tempPrevTimeStamp') as string) ?? 0 // 记录上一次的浏览总时长
 
-  Array.from(dom!.children).forEach(d => {
+  Array.from(dom!.children).forEach((d: Element) => {
     const itemWidth: number = d.clientWidth // 曝光节点的宽度
     const itemHeight: number = d.clientHeight // 曝光节点的高度
     const itemTop: number = d.getBoundingClientRect().top // 曝光节点距离顶部的的距离
@@ -36,12 +38,21 @@ const onScroll = (e: Event, dom: HTMLElement) => {
       itemLeft + itemWidth <= left + minWidth
     ) {
       const persistedIds = JSON.parse(window.sessionStorage.getItem('tempIds') as string) ?? []
+      const persistedTimeStamp =
+        JSON.parse(window.sessionStorage.getItem('tempTimeStamp') as string) ?? 0
+      const nowTimeStamp = new Date().getTime()
       const id = d.getAttribute('data-id') as string | number
+
+      if (nowTimeStamp - persistedTimeStamp >= 3600000) {
+        window.sessionStorage.setItem('tempIds', JSON.stringify([])) // 对ids进行持久化，解决一段时间内只能曝光一次的问题
+        window.sessionStorage.setItem('tempPrevTimeStamp', JSON.stringify(0)) // 清空浏览总时长
+      }
 
       if (persistedIds.indexOf(id) < 0) {
         ids.push(id)
         persistedIds.push(id)
         status = true
+        window.sessionStorage.setItem('tempTimeStamp', JSON.stringify(nowTimeStamp)) // 记录时间戳，在一小时内没有曝光后对ids进行清空
         window.sessionStorage.setItem('tempIds', JSON.stringify(persistedIds)) // 对ids进行持久化，解决一段时间内只能曝光一次的问题
       } else {
         status = false
@@ -50,7 +61,13 @@ const onScroll = (e: Event, dom: HTMLElement) => {
     }
   })
 
-  timeStamp = (e.timeStamp - timeStamp) / 1000
+  // 当前曝光时长小于缓存中的时长则为重新进入页面的操作，所以对缓存中的时长重置为0
+  if (e.timeStamp < prevTimeStamp) {
+    prevTimeStamp = 0
+  }
+
+  timeStamp = e.timeStamp - prevTimeStamp // 当前曝光时长减去之前曝光时长的总和
+  window.sessionStorage.setItem('tempPrevTimeStamp', JSON.stringify(e.timeStamp)) // 将新的曝光时长存入缓存中
 
   if (status) {
     console.log(Object.assign(baseObj, { ids, timeStamp: parseInt(String(timeStamp), 10) }))
