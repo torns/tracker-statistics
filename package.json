@@ -1,6 +1,6 @@
 {
   "name": "tracker-statistics",
-  "version": "0.5.0",
+  "version": "0.6.0",
   "description": "一个能够跟踪用户行为的统计工具",
   "keywords": [
     "tracker-statistics",
@@ -135,6 +135,7 @@
     "lodash": "^4.17.21",
     "tracker-statistics": "^0.1.17",
     "ua-parser-js": "^0.7.28",
-    "vconsole": "^3.9.1"
+    "vconsole": "^3.9.1",
+    "vue-router": "4"
   }
 }
