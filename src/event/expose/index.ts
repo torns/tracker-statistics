@@ -1,4 +1,4 @@
-import { debounce } from 'lodash'
+import _ from 'lodash'
 import { EventType } from '../interface'
 import prefab from '../../prefab'
 
@@ -90,7 +90,7 @@ const expose = (
 
   dom.addEventListener(
     'scroll',
-    debounce(
+    _.debounce(
       (e: Event) => {
         onScroll(e, dom)
       },

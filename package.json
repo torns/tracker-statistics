@@ -1,6 +1,6 @@
 {
   "name": "tracker-statistics",
-  "version": "0.6.0",
+  "version": "0.6.2",
   "description": "一个能够跟踪用户行为的统计工具",
   "keywords": [
     "tracker-statistics",
