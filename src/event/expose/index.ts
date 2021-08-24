@@ -1,6 +1,7 @@
 import _ from 'lodash'
 import { EventType } from '../interface'
 import prefab from '../../prefab'
+import { send } from '../../apis'
 
 let ids: Array<number | string> = [] // 当前可视区域的曝光内容
 let timeStamp: number = 0 // 曝光内容的时长
@@ -70,20 +71,23 @@ const onScroll = (e: Event, dom: HTMLElement) => {
   window.sessionStorage.setItem('tempExposePrevTimeStamp', JSON.stringify(e.timeStamp)) // 将新的曝光时长存入缓存中
 
   if (status) {
-    console.log(Object.assign(baseObj, { ids, timeStamp: parseInt(String(timeStamp), 10) }))
+    // send(Object.assign(baseObj, { itemIds: ids, duration: parseInt(String(timeStamp / 1000), 10) }))
   }
 }
 
 const expose = (
-  value: string,
+  name: string,
   containerId: string = '',
+  userId: string | number = '',
   isPrefab: boolean = true,
   data?: object
 ) => {
   const dom = document.getElementById(containerId) as HTMLElement
 
   baseObj = {
-    behavior: { type: EventType.expose, value, code: '' },
+    type: EventType.expose,
+    name,
+    userId,
     ...{ data },
     ...{ prefab: isPrefab ? prefab() : {} }
   }

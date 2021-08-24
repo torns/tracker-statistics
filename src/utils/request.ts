@@ -1,7 +1,7 @@
 import axios, { AxiosError, AxiosRequestConfig, AxiosResponse } from 'axios'
 
 const baseRequestConfig: AxiosRequestConfig = {
-  timeout: 6000
+  timeout: 0
 }
 
 const service = axios.create(baseRequestConfig)

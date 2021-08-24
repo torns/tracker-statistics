@@ -1,11 +1,12 @@
 import { EventType } from '../interface'
 import prefab from '../../prefab'
+import { send } from '../../apis'
 
 const stay = {
   entry: () => {
     window.sessionStorage.setItem('tempStayEntryTimeStamp', JSON.stringify(new Date().getTime()))
   },
-  leave: (isPrefab: boolean = true, data?: object) => {
+  leave: (userId: string | number = '', isPrefab: boolean = true, data?: object) => {
     const duration: number = parseInt(
       String(
         new Date().getTime() / 1000 -
@@ -14,14 +15,13 @@ const stay = {
       10
     )
 
-    const obj = {
+    send({
       type: EventType.stay,
       duration,
+      userId,
       ...{ data },
       ...{ prefab: isPrefab ? prefab() : {} }
-    }
-
-    console.log(obj)
+    })
   }
 }
 
