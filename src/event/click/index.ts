@@ -2,12 +2,7 @@ import { EventType } from '../interface'
 import prefab from '../../prefab'
 import { send } from '../../apis'
 
-const click = (
-  name: string,
-  userId: string | number = '',
-  isPrefab: boolean = true,
-  data?: object
-) => {
+const click = (name: string, userId: string = '', isPrefab: boolean = true, data?: object) => {
   send({
     type: EventType.click,
     name,

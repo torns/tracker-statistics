@@ -4,8 +4,8 @@ import { send } from '../../apis'
 
 const share = (
   name: string,
-  itemId: string | number,
-  userId: string | number = '',
+  itemId: string,
+  userId: string = '',
   isPrefab: boolean = true,
   data?: object
 ) => {

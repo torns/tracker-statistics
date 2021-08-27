@@ -18,7 +18,7 @@ const onScroll = (e: Event, dom: HTMLElement) => {
   let scrollTop: number = dom!.scrollTop // 当前父容器的滚动距离
   let status: boolean = true // 控制当前可视区域的内容是否在一小时内被曝光过
   let prevTimeStamp: number =
-    JSON.parse(window.sessionStorage.getItem('tempPrevTimeStamp') as string) ?? 0 // 记录上一次的浏览总时长
+    JSON.parse(window.sessionStorage.getItem('tempExposePrevTimeStamp') as string) ?? 0 // 记录上一次的浏览总时长
 
   Array.from(dom!.children).forEach((d: Element) => {
     const itemWidth: number = d.clientWidth // 曝光节点的宽度
@@ -71,14 +71,16 @@ const onScroll = (e: Event, dom: HTMLElement) => {
   window.sessionStorage.setItem('tempExposePrevTimeStamp', JSON.stringify(e.timeStamp)) // 将新的曝光时长存入缓存中
 
   if (status) {
-    // send(Object.assign(baseObj, { itemIds: ids, duration: parseInt(String(timeStamp / 1000), 10) }))
+    ids.forEach(id => {
+      send(Object.assign(baseObj, { itemId: id, duration: parseInt(String(timeStamp / 1000), 10) }))
+    })
   }
 }
 
 const expose = (
   name: string,
   containerId: string = '',
-  userId: string | number = '',
+  userId: string = '',
   isPrefab: boolean = true,
   data?: object
 ) => {

@@ -6,7 +6,7 @@ const stay = {
   entry: () => {
     window.sessionStorage.setItem('tempStayEntryTimeStamp', JSON.stringify(new Date().getTime()))
   },
-  leave: (userId: string | number = '', isPrefab: boolean = true, data?: object) => {
+  leave: (userId: string = '', isPrefab: boolean = true, data?: object) => {
     const duration: number = parseInt(
       String(
         new Date().getTime() / 1000 -
