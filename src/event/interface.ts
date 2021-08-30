@@ -1,3 +1,5 @@
+import { Method } from 'axios'
+
 enum EventType {
   expose = 'expose', // 曝光
   click = 'click', // 点击
@@ -14,7 +16,7 @@ enum EventType {
 
 interface InitProps {
   url: string
-  method: string
+  method: Method
   storage?: 'localStorage' | 'sessionStorage'
 }
 

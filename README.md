@@ -41,7 +41,7 @@ import trackerStatistics from 'tracker-statistics'
 ```typescript
 interface InitProps {
   url: string                                 // 接口服务的地址
-  method: string                              // 接口的请求类型
+  method: Method                              // 接口的请求类型， Method 类型为 request 支持的请求类型
   storage?: 'localStorage' | 'sessionStorage' // 缓存数据存储位置，目前只支持 sessionStorage
 }
 ```
