@@ -1,13 +1,8 @@
-import { EventType } from '../interface'
+import { EventType, ClickProps } from '../interface'
 import prefab from '../../prefab'
 import { send } from '../../apis'
 
-const click = (
-  name: string,
-  userId: string = '',
-  isPrefab: boolean = true,
-  data?: object
-): void => {
+const click = ({ name, userId = '', isPrefab = true, data = {} }: ClickProps): void => {
   send({
     type: EventType.click,
     name,

@@ -33,4 +33,8 @@ interface ExposeProps extends BaseProps {
   name: string
 }
 
-export { EventType, InitProps, ExposeProps }
+interface ClickProps extends BaseProps {
+  name: string
+}
+
+export { EventType, InitProps, ExposeProps, ClickProps }

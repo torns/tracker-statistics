@@ -81,3 +81,26 @@ trackerStatistics.expose({
 })
 ```
 
+### 点击行为
+
+点击行为常常用于追踪用户的点击事件。
+
+#### 类型
+
+```typescript
+interface ClickProps {
+  data?: DataProps    // 自定义业务数据
+  isPrefab?: boolean  // 是否显示预制体
+  userId: string      // 用户ID
+  name: string        // 对应点击名称
+}
+```
+
+#### 使用
+
+```javascript
+trackerStatistics.click({ 
+  name: '首页', 
+  userId: '1'
+})
+```
