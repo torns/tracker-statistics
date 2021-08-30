@@ -8,7 +8,7 @@
 - 完整的类型检查机制
 - 开箱即用，减少项目复杂程度
 
-`tracker statistics`作为一个代码埋点的工具，能够适用于任何基于`web`的用户行为埋点工具，该工具抽象出了多种行为类型，每种类型对应一个处理函数。
+`tracker statistics` 作为一个代码埋点的工具，能够适用于任何基于 `web` 的用户行为埋点工具，该工具抽象出了多种行为类型，每种类型对应一个处理函数。
 
 通常情况下每个行为方法的固定参数无法满足较为复杂的业务需求，为此我们提供了自定义业务数据的功能。
 
@@ -26,7 +26,7 @@ npm install tracker-statistics
 
 在需要进行埋点的页面进行引入，如有大量页面需要使用埋点时，可是使用全局挂载的形式。
 
-该`sdk`依赖于浏览器的`sessionStorge`或`localStorage`进行缓存数据的处理，因此会具有某些`sessionStorge`或`localStorage`的特性。
+该 `sdk` 依赖于浏览器的 `sessionStorge` 或 `localStorage` 进行缓存数据的处理，因此会具有某些 `sessionStorge` 或 `localStorage` 的特性。
 
 ```javascript
 import trackerStatistics from 'tracker-statistics'
@@ -34,7 +34,7 @@ import trackerStatistics from 'tracker-statistics'
 
 ### 初始化
 
-初始化方法允许用户在私有化过程中传递服务器接口信息以及`sdk`中的一些配置。
+初始化方法允许用户在私有化过程中传递服务器接口信息以及 `sdk` 中的一些配置。
 
 #### 类型
 
@@ -65,8 +65,8 @@ trackerStatistics.init({
 interface ExposeProps {
   data?: DataProps    // 自定义业务数据
   isPrefab?: boolean  // 是否显示预制体
-  userId: string      // 用户ID
-  containerId: string // 页面列表中的容器ID
+  userId: string      // 用户 ID
+  containerId: string // 页面列表中的容器 ID
   name: string        // 对应列表名称
 }
 ```
@@ -91,7 +91,7 @@ trackerStatistics.expose({
 interface ClickProps {
   data?: DataProps    // 自定义业务数据
   isPrefab?: boolean  // 是否显示预制体
-  userId: string      // 用户ID
+  userId: string      // 用户 ID
   name: string        // 对应点击名称
 }
 ```
