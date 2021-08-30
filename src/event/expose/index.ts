@@ -1,5 +1,5 @@
 import _ from 'lodash'
-import { EventType } from '../interface'
+import { EventType, ExposeProps } from '../interface'
 import prefab from '../../prefab'
 import { send } from '../../apis'
 
@@ -77,14 +77,12 @@ const onScroll = (e: Event, dom: HTMLElement): void => {
   }
 }
 
-const expose = (
-  name: string,
-  containerId: string = '',
-  userId: string = '',
-  isPrefab: boolean = true,
-  data?: object
-): void => {
+const expose = ({ name, containerId, userId, isPrefab = true, data = {} }: ExposeProps): void => {
   const dom = document.getElementById(containerId) as HTMLElement
+
+  if (!dom) {
+    return
+  }
 
   baseObj = {
     type: EventType.expose,

@@ -10,12 +10,12 @@ const HomePage = defineComponent({
     const router = useRouter()
 
     onMounted(() => {
-      trackerStatistics.expose('shop', 'fuji', uuidv4())
-      trackerStatistics.stay.entry()
       trackerStatistics.init({
-        url: '',
-        method: ''
+        url: 'http://192.168.0.196:17001/api/sdk/h5',
+        method: 'post'
       })
+      trackerStatistics.stay.entry()
+      trackerStatistics.expose({ name: 'shop', containerId: 'fuji', userId: uuidv4() })
     })
 
     onBeforeUnmount(() => {

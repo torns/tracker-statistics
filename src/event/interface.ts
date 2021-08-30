@@ -12,24 +12,25 @@ enum EventType {
   stay = 'stay' // 停留
 }
 
-interface Namespace {
-  name: string
-  cname: string
-  code?: number
+interface InitProps {
+  url: string
+  method: string
+  storage?: 'localStorage' | 'sessionStorage'
 }
 
 interface DataProps {
   [dataProps: string]: string | number
 }
 
-interface BaseReturn {
-  data: DataProps | undefined
-  behavior: Namespace
+interface BaseProps {
+  data?: DataProps
+  isPrefab?: boolean
+  userId: string
 }
 
-interface Init {
-  url: string
-  method: string
+interface ExposeProps extends BaseProps {
+  containerId: string
+  name: string
 }
 
-export { EventType, Namespace, DataProps, BaseReturn, Init }
+export { EventType, InitProps, ExposeProps }

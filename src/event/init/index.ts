@@ -1,7 +1,7 @@
-import { Init } from '../interface'
+import { InitProps } from '../interface'
 
-const init = (data: Init): void => {
-  window.sessionStorage.setItem('tempInit', JSON.stringify(data))
+const init = ({ method, url, storage = 'sessionStorage' }: InitProps): void => {
+  window.sessionStorage.setItem('tempInit', JSON.stringify({ method, url, storage }))
 }
 
 export { init }
