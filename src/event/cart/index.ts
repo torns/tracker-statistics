@@ -1,13 +1,8 @@
-import { EventType } from '../interface'
+import { EventType, CartProps } from '../interface'
 import prefab from '../../prefab'
 import { send } from '../../apis'
 
-const cart = (
-  itemId: string,
-  userId: string = '',
-  isPrefab: boolean = true,
-  data?: object
-): void => {
+const cart = ({ itemId, userId = '', isPrefab = true, data = {} }: CartProps): void => {
   send({
     type: EventType.cart,
     itemId,

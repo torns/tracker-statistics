@@ -25,7 +25,7 @@ const HomePage = defineComponent({
     const onBuy = () => {
       trackerStatistics.click({ name: '首页', userId: uuidv4() })
       trackerStatistics.buy(uuidv4(), uuidv4())
-      trackerStatistics.cart(uuidv4(), uuidv4())
+      trackerStatistics.cart({ itemId: uuidv4(), userId: uuidv4() })
       trackerStatistics.collect('shop', uuidv4(), uuidv4())
       trackerStatistics.comment('shop', '真好用', uuidv4(), uuidv4())
       trackerStatistics.like('shop', uuidv4(), uuidv4())

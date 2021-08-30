@@ -39,4 +39,8 @@ interface ClickProps extends BaseProps {
   name: string
 }
 
-export { EventType, InitProps, ExposeProps, ClickProps }
+interface CartProps extends BaseProps {
+  itemId: string
+}
+
+export { EventType, InitProps, ExposeProps, ClickProps, CartProps }
