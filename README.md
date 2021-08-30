@@ -26,7 +26,7 @@ npm install tracker-statistics
 
 在需要进行埋点的页面进行引入，如有大量页面需要使用埋点时，可是使用全局挂载的形式。
 
-该`sdk`依赖于浏览器的`sessionStorge`进行缓存数据的处理，因此会具有某些`sessionStorge`的特性。
+该`sdk`依赖于浏览器的`sessionStorge`或`localStorage`进行缓存数据的处理，因此会具有某些`sessionStorge`或`localStorage`的特性。
 
 ```javascript
 import trackerStatistics from 'tracker-statistics'
