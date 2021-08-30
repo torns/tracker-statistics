@@ -12,6 +12,10 @@ const HomePage = defineComponent({
     onMounted(() => {
       trackerStatistics.expose('shop', 'fuji', uuidv4())
       trackerStatistics.stay.entry()
+      trackerStatistics.init({
+        url: '',
+        method: ''
+      })
     })
 
     onBeforeUnmount(() => {
@@ -19,15 +23,15 @@ const HomePage = defineComponent({
     })
 
     const onBuy = () => {
-      // trackerStatistics.buy(uuidv4(), uuidv4())
-      // trackerStatistics.cart(uuidv4(), uuidv4())
-      // trackerStatistics.collect('shop', uuidv4(), uuidv4())
-      // trackerStatistics.comment('shop', '真好用', uuidv4(), uuidv4())
-      // trackerStatistics.like('shop', uuidv4(), uuidv4())
-      // trackerStatistics.share('shop', uuidv4(), uuidv4())
-      // trackerStatistics.subscribe('shop', uuidv4())
-      // trackerStatistics.unlike('shop', uuidv4(), uuidv4())
-      router.push('/test')
+      trackerStatistics.buy(uuidv4(), uuidv4())
+      trackerStatistics.cart(uuidv4(), uuidv4())
+      trackerStatistics.collect('shop', uuidv4(), uuidv4())
+      trackerStatistics.comment('shop', '真好用', uuidv4(), uuidv4())
+      trackerStatistics.like('shop', uuidv4(), uuidv4())
+      trackerStatistics.share('shop', uuidv4(), uuidv4())
+      trackerStatistics.subscribe('shop', uuidv4())
+      trackerStatistics.unlike('shop', uuidv4(), uuidv4())
+      // router.push('/test')
     }
 
     return {

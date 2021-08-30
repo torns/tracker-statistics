@@ -3,10 +3,10 @@ import prefab from '../../prefab'
 import { send } from '../../apis'
 
 const stay = {
-  entry: () => {
+  entry: (): void => {
     window.sessionStorage.setItem('tempStayEntryTimeStamp', JSON.stringify(new Date().getTime()))
   },
-  leave: (userId: string = '', isPrefab: boolean = true, data?: object) => {
+  leave: (userId: string = '', isPrefab: boolean = true, data?: object): void => {
     const duration: number = parseInt(
       String(
         new Date().getTime() / 1000 -

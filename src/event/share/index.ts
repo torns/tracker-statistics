@@ -8,7 +8,7 @@ const share = (
   userId: string = '',
   isPrefab: boolean = true,
   data?: object
-) => {
+): void => {
   send({
     type: EventType.share,
     name,

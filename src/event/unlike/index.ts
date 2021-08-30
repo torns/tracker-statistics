@@ -8,7 +8,7 @@ const unlike = (
   userId: string = '',
   isPrefab: boolean = true,
   data?: object
-) => {
+): void => {
   send({
     type: EventType.unlike,
     name,

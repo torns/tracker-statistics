@@ -2,7 +2,12 @@ import { EventType } from '../interface'
 import prefab from '../../prefab'
 import { send } from '../../apis'
 
-const buy = (itemId: string, userId: string = '', isPrefab: boolean = true, data?: object) => {
+const buy = (
+  itemId: string,
+  userId: string = '',
+  isPrefab: boolean = true,
+  data?: object
+): void => {
   send({
     type: EventType.buy,
     itemId,

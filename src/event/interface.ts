@@ -27,4 +27,9 @@ interface BaseReturn {
   behavior: Namespace
 }
 
-export { EventType, Namespace, DataProps, BaseReturn }
+interface Init {
+  url: string
+  method: string
+}
+
+export { EventType, Namespace, DataProps, BaseReturn, Init }

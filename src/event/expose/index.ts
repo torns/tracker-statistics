@@ -8,7 +8,7 @@ let timeStamp: number = 0 // 曝光内容的时长
 let baseObj = {} // 基础埋点对象
 
 // 处理滚动
-const onScroll = (e: Event, dom: HTMLElement) => {
+const onScroll = (e: Event, dom: HTMLElement): void => {
   ids = [] // 重置当前可视区域的曝光内容
 
   const { innerHeight, innerWidth } = window // 可视区域宽高
@@ -83,7 +83,7 @@ const expose = (
   userId: string = '',
   isPrefab: boolean = true,
   data?: object
-) => {
+): void => {
   const dom = document.getElementById(containerId) as HTMLElement
 
   baseObj = {

@@ -9,6 +9,7 @@ import { comment } from './event/comment'
 import { share } from './event/share'
 import { subscribe } from './event/subscribe'
 import { stay } from './event/stay'
+import { init } from './event/init'
 
 const trackerStatistics = {
   expose,
@@ -21,7 +22,8 @@ const trackerStatistics = {
   comment,
   share,
   subscribe,
-  stay
+  stay,
+  init
 }
 
 export default trackerStatistics

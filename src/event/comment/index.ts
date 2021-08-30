@@ -9,7 +9,7 @@ const comment = (
   userId: string = '',
   isPrefab: boolean = true,
   data?: object
-) => {
+): void => {
   send({
     type: EventType.comment,
     name,
