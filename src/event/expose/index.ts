@@ -1,5 +1,6 @@
 import _ from 'lodash'
-import { EventType, ExposeProps } from '../interface'
+import { EventType } from '../types'
+import { ExposeProps } from './types'
 import prefab from '../../prefab'
 import { send } from '../../apis'
 

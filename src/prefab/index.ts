@@ -1,7 +1,7 @@
 // @ts-ignore
 import * as pkg from '../../package.json'
 import UAParser from 'ua-parser-js'
-import { Url, Prefab } from './interface'
+import { Url, Prefab } from './types'
 
 const parser = new UAParser()
 const _navigator: any = navigator

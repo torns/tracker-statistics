@@ -1,4 +1,4 @@
-import { InitProps } from '../interface'
+import { InitProps } from './types'
 
 const init = ({ method, url, storage = 'sessionStorage' }: InitProps): void => {
   window.sessionStorage.setItem('tempInit', JSON.stringify({ method, url, storage }))

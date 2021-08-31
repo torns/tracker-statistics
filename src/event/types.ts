@@ -14,12 +14,6 @@ enum EventType {
   stay = 'stay' // 停留
 }
 
-interface InitProps {
-  url: string
-  method: Method
-  storage?: 'localStorage' | 'sessionStorage'
-}
-
 interface DataProps {
   [dataProps: string]: string | number
 }
@@ -30,17 +24,4 @@ interface BaseProps {
   userId: string
 }
 
-interface ExposeProps extends BaseProps {
-  containerId: string
-  name: string
-}
-
-interface ClickProps extends BaseProps {
-  name: string
-}
-
-interface CartProps extends BaseProps {
-  itemId: string
-}
-
-export { EventType, InitProps, ExposeProps, ClickProps, CartProps }
+export { EventType, BaseProps }
