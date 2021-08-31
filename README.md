@@ -107,7 +107,7 @@ trackerStatistics.click({
 
 ### 加入购物车行为
 
-加入购物车行为常用于商城类行为埋点的抽象，是一种对点击行为的上层封装。
+加入购物车行为是对商城类行为埋点的抽象，是对点击行为的上层封装。
 
 #### 类型
 
@@ -124,6 +124,28 @@ interface CartProps {
 
 ```javascript
 trackerStatistics.cart({ 
+  itemId: '1',
+  userId: '1'
+})
+```
+
+### 购买行为
+
+购买行为是对商城类行为埋点的抽象，是对点击事件的上层封装。
+
+#### 类型
+
+```typescript
+interface CartProps {
+  data?: DataProps    // 自定义业务数据
+  isPrefab?: boolean  // 是否显示预制体
+  userId: string      // 用户 ID
+  itemId: string      // 商品 ID
+}
+```
+
+```javascript
+trackerStatistics.buy({
   itemId: '1',
   userId: '1'
 })

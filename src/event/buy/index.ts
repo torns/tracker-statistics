@@ -1,13 +1,9 @@
 import { EventType } from '../types'
+import { BuyProps } from './types'
 import prefab from '../../prefab'
 import { send } from '../../apis'
 
-const buy = (
-  itemId: string,
-  userId: string = '',
-  isPrefab: boolean = true,
-  data?: object
-): void => {
+const buy = ({ itemId, userId = '', isPrefab = true, data = {} }: BuyProps): void => {
   send({
     type: EventType.buy,
     itemId,
