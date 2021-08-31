@@ -258,3 +258,29 @@ trackerStatistics.comment({
   userId: '1'
 })
 ```
+
+### 分享行为
+
+用于对商品和文章等分享事件的埋点。
+
+#### 类型
+
+```typescript
+interface CommentProps {
+  data?: DataProps    // 自定义业务数据
+  isPrefab?: boolean  // 是否显示预制体
+  userId: string      // 用户 ID
+  itemId: string      // 内容项 ID
+  name: string        // 对应分享名称
+}
+```
+
+#### 使用
+
+```javascript
+trackerStatistics.comment({
+  name: 'shop',
+  itemId: '1',
+  userId: '1'
+})
+```
