@@ -136,7 +136,7 @@ trackerStatistics.cart({
 #### 类型
 
 ```typescript
-interface CartProps {
+interface BuyProps {
   data?: DataProps    // 自定义业务数据
   isPrefab?: boolean  // 是否显示预制体
   userId: string      // 用户 ID
@@ -155,12 +155,12 @@ trackerStatistics.buy({
 
 ### 收藏行为
 
-收藏行为常见于对文章、商品等收藏操作。
+收藏行为通常用于对文章和商品等。
 
 #### 类型
 
 ```typescript
-interface CartProps {
+interface CollectProps {
   data?: DataProps    // 自定义业务数据
   isPrefab?: boolean  // 是否显示预制体
   userId: string      // 用户 ID
@@ -178,3 +178,31 @@ trackerStatistics.collect({
   userId: '1'
 })
 ```
+
+### 点赞行为
+
+点赞行为通常用于对文章和评论等。
+
+#### 类型
+
+```typescript
+interface LikeProps {
+  data?: DataProps    // 自定义业务数据
+  isPrefab?: boolean  // 是否显示预制体
+  userId: string      // 用户 ID
+  itemId: string      // 商品 ID
+  name: string        // 对应点赞名称
+}
+```
+
+#### 使用
+
+```javascript
+trackerStatistics.like({
+  name: 'shop',
+  itemId: '1',
+  userId: '1'
+})
+```
+
+
