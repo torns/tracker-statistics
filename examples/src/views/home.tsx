@@ -27,7 +27,7 @@ const HomePage = defineComponent({
       trackerStatistics.buy({ itemId: uuidv4(), userId: uuidv4() })
       trackerStatistics.cart({ itemId: uuidv4(), userId: uuidv4() })
       trackerStatistics.collect({ name: 'shop', itemId: uuidv4(), userId: uuidv4() })
-      trackerStatistics.comment('shop', '真好用', uuidv4(), uuidv4())
+      trackerStatistics.comment({ name: 'shop', content: '真好用', itemId: uuidv4(), userId: uuidv4() })
       trackerStatistics.like({ name: 'shop', itemId: uuidv4(), userId: uuidv4() })
       trackerStatistics.share('shop', uuidv4(), uuidv4())
       trackerStatistics.subscribe('shop', uuidv4())

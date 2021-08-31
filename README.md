@@ -164,7 +164,7 @@ interface CollectProps {
   data?: DataProps    // 自定义业务数据
   isPrefab?: boolean  // 是否显示预制体
   userId: string      // 用户 ID
-  itemId: string      // 商品 ID
+  itemId: string      // 内容项 ID
   name: string        // 对应收藏名称
 }
 ```
@@ -190,7 +190,7 @@ interface LikeProps {
   data?: DataProps    // 自定义业务数据
   isPrefab?: boolean  // 是否显示预制体
   userId: string      // 用户 ID
-  itemId: string      // 商品 ID
+  itemId: string      // 内容项 ID
   name: string        // 对应点赞名称
 }
 ```
@@ -216,7 +216,7 @@ interface UnlikeProps {
   data?: DataProps    // 自定义业务数据
   isPrefab?: boolean  // 是否显示预制体
   userId: string      // 用户 ID
-  itemId: string      // 商品 ID
+  itemId: string      // 内容项 ID
   name: string        // 对应点衰名称
 }
 ```
@@ -226,6 +226,34 @@ interface UnlikeProps {
 ```javascript
 trackerStatistics.unlike({
   name: 'comment',
+  itemId: '1',
+  userId: '1'
+})
+```
+
+### 写评论行为
+
+用于对商品和文章等发布评论的埋点。
+
+#### 类型
+
+```typescript
+interface CommentProps {
+  data?: DataProps    // 自定义业务数据
+  isPrefab?: boolean  // 是否显示预制体
+  userId: string      // 用户 ID
+  itemId: string      // 内容项 ID
+  content: string     // 评论的内容
+  name: string        // 对应评论名称
+}
+```
+
+#### 使用
+
+```javascript
+trackerStatistics.comment({
+  name: 'comment',
+  content: 'content',
   itemId: '1',
   userId: '1'
 })
