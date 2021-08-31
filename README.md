@@ -266,7 +266,7 @@ trackerStatistics.comment({
 #### 类型
 
 ```typescript
-interface CommentProps {
+interface ShareProps {
   data?: DataProps    // 自定义业务数据
   isPrefab?: boolean  // 是否显示预制体
   userId: string      // 用户 ID
@@ -278,9 +278,33 @@ interface CommentProps {
 #### 使用
 
 ```javascript
-trackerStatistics.comment({
+trackerStatistics.share({
   name: 'shop',
   itemId: '1',
+  userId: '1'
+})
+```
+
+### 订阅行为
+
+用于对消息通知的订阅。
+
+#### 类型
+
+```typescript
+interface SubscribeProps {
+  data?: DataProps    // 自定义业务数据
+  isPrefab?: boolean  // 是否显示预制体
+  userId: string      // 用户 ID
+  name: string        // 对应订阅名称
+}
+```
+
+#### 使用
+
+```javascript
+trackerStatistics.subscribe({
+  name: 'notification',
   userId: '1'
 })
 ```
