@@ -31,7 +31,7 @@ const HomePage = defineComponent({
       trackerStatistics.like({ name: 'shop', itemId: uuidv4(), userId: uuidv4() })
       trackerStatistics.share('shop', uuidv4(), uuidv4())
       trackerStatistics.subscribe('shop', uuidv4())
-      trackerStatistics.unlike('shop', uuidv4(), uuidv4())
+      trackerStatistics.unlike({ name: 'shop', itemId: uuidv4(), userId: uuidv4() })
       // router.push('/test')
     }
 

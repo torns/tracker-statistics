@@ -199,10 +199,34 @@ interface LikeProps {
 
 ```javascript
 trackerStatistics.like({
-  name: 'shop',
+  name: 'comment',
   itemId: '1',
   userId: '1'
 })
 ```
 
+### 点衰行为
 
+点衰行为通常用于对文章和评论等执行差评的操作。
+
+#### 类型
+
+```typescript
+interface UnlikeProps {
+  data?: DataProps    // 自定义业务数据
+  isPrefab?: boolean  // 是否显示预制体
+  userId: string      // 用户 ID
+  itemId: string      // 商品 ID
+  name: string        // 对应点衰名称
+}
+```
+
+#### 使用
+
+```javascript
+trackerStatistics.unlike({
+  name: 'comment',
+  itemId: '1',
+  userId: '1'
+})
+```
