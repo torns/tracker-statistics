@@ -18,7 +18,7 @@
 # yarn
 yarn add tracker-statistics
 
-# or with npm
+# npm
 npm install tracker-statistics
 ```
 
@@ -58,6 +58,7 @@ trackerStatistics.init({
 ### 曝光行为
 
 曝光行为通常用于列表页面针对某一项是否被完全的展示（即列表中的某一项是否在父级容器中完全显示），并提供针对这一项的浏览时长的统计。
+值得注意的是该行为需要在 `dom` 渲染完成后执行。
 
 #### 类型
 
@@ -306,5 +307,32 @@ interface SubscribeProps {
 trackerStatistics.subscribe({
   name: 'notification',
   userId: '1'
+})
+```
+
+### 停留行为
+
+停留行为通常用于获取用户在某一个页面停留了多长时间。
+该行为包含两个方法，需要在页面挂载和卸载的生命周期里进行调用。
+
+#### 类型
+
+```typescript
+interface BaseProps {
+  data?: DataProps    // 自定义业务数据
+  isPrefab?: boolean  // 是否显示预制体
+  userId: string      // 用户 ID
+}
+```
+
+#### 使用
+
+```javascript
+// 页面加载时使用
+trackerStatistics.stay.entry()
+
+// 页面卸载时使用
+trackerStatistics.stay.leave({
+  userId: uuidv4()
 })
 ```

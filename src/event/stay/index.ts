@@ -1,4 +1,4 @@
-import { EventType } from '../types'
+import { EventType, BaseProps } from '../types'
 import prefab from '../../prefab'
 import { send } from '../../apis'
 
@@ -6,7 +6,7 @@ const stay = {
   entry: (): void => {
     window.sessionStorage.setItem('tempStayEntryTimeStamp', JSON.stringify(new Date().getTime()))
   },
-  leave: (userId: string = '', isPrefab: boolean = true, data?: object): void => {
+  leave: ({ userId, isPrefab = true, data = {} }: BaseProps): void => {
     const duration: number = parseInt(
       String(
         new Date().getTime() / 1000 -

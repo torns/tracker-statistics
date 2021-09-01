@@ -19,7 +19,7 @@ const HomePage = defineComponent({
     })
 
     onBeforeUnmount(() => {
-      trackerStatistics.stay.leave(uuidv4())
+      trackerStatistics.stay.leave({ userId: uuidv4() })
     })
 
     const onBuy = () => {
