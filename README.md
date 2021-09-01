@@ -333,6 +333,6 @@ trackerStatistics.stay.entry()
 
 // 页面卸载时使用
 trackerStatistics.stay.leave({
-  userId: uuidv4()
+  userId: '1'
 })
 ```
