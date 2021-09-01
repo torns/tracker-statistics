@@ -1,4 +1,5 @@
-import { EventType, CartProps } from '../types'
+import { EventType } from '../types'
+import { CartProps } from './types'
 import prefab from '../../prefab'
 import { send } from '../../apis'
 
