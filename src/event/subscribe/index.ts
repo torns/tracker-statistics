@@ -3,7 +3,7 @@ import prefab from '../../prefab'
 import { send } from '../../apis'
 import { SubscribeProps } from './types'
 
-const subscribe = ({ name, userId = '', isPrefab = true, data = {} }: SubscribeProps): void => {
+const subscribe = ({ name, userId, isPrefab = true, data = {} }: SubscribeProps): void => {
   send({
     type: EventType.subscribe,
     name,

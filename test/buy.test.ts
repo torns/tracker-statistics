@@ -11,4 +11,7 @@ describe('buy test', () => {
     expect(() => buy({ itemId: '1', userId: '1', isPrefab: true })).toThrow()
     expect(() => buy({ itemId: '1', userId: '1', isPrefab: false })).toThrow()
   })
+  it('the type of data is object', () => {
+    expect(() => buy({ itemId: '1', userId: '1', data: { a: '1' } })).toThrow()
+  })
 })

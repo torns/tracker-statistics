@@ -7,7 +7,7 @@ const comment = ({
   name,
   content,
   itemId,
-  userId = '',
+  userId,
   isPrefab = true,
   data = {}
 }: CommentProps): void => {

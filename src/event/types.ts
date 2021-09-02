@@ -15,7 +15,7 @@ enum EventType {
 }
 
 interface DataProps {
-  [dataProps: string]: string | number
+  [dataProps: string]: any
 }
 
 interface BaseProps {

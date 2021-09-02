@@ -3,7 +3,7 @@ import { CartProps } from './types'
 import prefab from '../../prefab'
 import { send } from '../../apis'
 
-const cart = ({ itemId, userId = '', isPrefab = true, data = {} }: CartProps): void => {
+const cart = ({ itemId, userId, isPrefab = true, data = {} }: CartProps): void => {
   send({
     type: EventType.cart,
     itemId,

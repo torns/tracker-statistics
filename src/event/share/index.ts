@@ -3,7 +3,7 @@ import { ShareProps } from './types'
 import prefab from '../../prefab'
 import { send } from '../../apis'
 
-const share = ({ name, itemId, userId = '', isPrefab = true, data = {} }: ShareProps): void => {
+const share = ({ name, itemId, userId, isPrefab = true, data = {} }: ShareProps): void => {
   send({
     type: EventType.share,
     name,
