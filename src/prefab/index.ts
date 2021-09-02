@@ -3,8 +3,7 @@ import * as pkg from '../../package.json'
 import UAParser from 'ua-parser-js'
 import { Url, Prefab } from './types'
 
-const parser = new UAParser()
-const _navigator: any = navigator
+const _navigator: any = window.navigator
 const url = () => {
   const _location: Url = window.location
 
@@ -22,7 +21,7 @@ const url = () => {
 
 const prefab = (): Prefab => {
   return {
-    ...parser.getResult(),
+    ...new UAParser().getResult(),
     sdkVersion: pkg.version,
     network: _navigator.connection ? _navigator.connection.effectiveType : undefined,
     referrer: window.document.referrer, // 前一个页面
