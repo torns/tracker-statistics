@@ -1,6 +1,6 @@
 {
   "name": "tracker-statistics",
-  "version": "0.7.0",
+  "version": "0.7.1",
   "description": "一个能够跟踪用户行为的统计工具",
   "keywords": [
     "tracker-statistics",
@@ -74,8 +74,9 @@
       }
     },
     "collectCoverageFrom": [
-      "src/*.{js,ts}",
-      "src/**/*.{js,ts}"
+      "src/event/**/*.{js,ts}",
+      "src/prefab/**/*.{js,ts}",
+      "src/utils/**/*.{js,ts}"
     ]
   },
   "prettier": {
