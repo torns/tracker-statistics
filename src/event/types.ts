@@ -1,5 +1,3 @@
-import { Method } from 'axios'
-
 enum EventType {
   expose = 'expose', // 曝光
   click = 'click', // 点击
