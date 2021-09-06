@@ -1,7 +1,5 @@
 import { IResult } from 'ua-parser-js'
 
-type UsageMethod = 'code' | 'visualization' | undefined
-
 interface Url {
   href: string
   protocol: string
@@ -15,7 +13,6 @@ interface Url {
 
 interface Prefab extends IResult {
   sdkVersion: string
-  usageMethod: UsageMethod
   network: string
   url: Url
   referrer: string

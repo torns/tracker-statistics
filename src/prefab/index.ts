@@ -26,9 +26,8 @@ const prefab = (): Prefab => {
     network: _navigator.connection ? _navigator.connection.effectiveType : undefined,
     referrer: window.document.referrer, // 前一个页面
     url: url(),
-    timestamp: new Date().getTime(),
-    usageMethod: undefined
+    timestamp: new Date().getTime()
   }
 }
 
-export default prefab // TODO: 在发送接口时候混入进去
+export default prefab
