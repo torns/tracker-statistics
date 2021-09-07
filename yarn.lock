@@ -10351,20 +10351,6 @@ tr46@^2.1.0:
   dependencies:
     punycode "^2.1.1"
 
-tracker-statistics@^0.1.15, tracker-statistics@^0.1.16:
-  version "0.1.16"
-  resolved "https://registry.yarnpkg.com/tracker-statistics/-/tracker-statistics-0.1.16.tgz#fd616f28d5686cb16ca5207267bcaa6cd484a171"
-  integrity sha512-FBcXNtDIU79/0DAJqb1YnUKMMLo6UZeX3v7DczGEEDNvcEIxMCRJoHGgdRdKPZR4ryDb1IWsroi5G/cGkHP0Lg==
-  dependencies:
-    tracker-statistics "^0.1.15"
-
-tracker-statistics@^0.1.17:
-  version "0.1.17"
-  resolved "https://registry.yarnpkg.com/tracker-statistics/-/tracker-statistics-0.1.17.tgz#6e8ccf1e8bee8051321c4bff7940b1b7d57d7a5c"
-  integrity sha512-zJDBElSgf5i9Maf7rrgG7BFimeHHhKI6gUDrdrqU880G/mswacYAxYYqoyZ4eJQxN9wCZxy2TkoqoYemvMFSeA==
-  dependencies:
-    tracker-statistics "^0.1.16"
-
 traverse@~0.6.6:
   version "0.6.6"
   resolved "https://registry.yarnpkg.com/traverse/-/traverse-0.6.6.tgz#cbdf560fd7b9af632502fed40f918c157ea97137"

@@ -1,6 +1,6 @@
 {
   "name": "tracker-statistics",
-  "version": "0.7.2",
+  "version": "0.7.4",
   "description": "一个能够跟踪用户行为的统计工具",
   "keywords": [
     "tracker-statistics",
@@ -93,6 +93,11 @@
     "@commitlint/config-conventional": "^7.1.2",
     "@types/jest": "^27.0.1",
     "@types/node": "^10.11.0",
+    "@types/ua-parser-js": "^0.7.36",
+    "@types/uuid": "^8.3.1",
+    "@typescript-eslint/eslint-plugin": "^4.30.0",
+    "@typescript-eslint/experimental-utils": "^4.30.0",
+    "@typescript-eslint/parser": "^4.30.0",
     "@vitejs/plugin-vue": "^1.2.5",
     "@vitejs/plugin-vue-jsx": "^1.1.6",
     "@vue/babel-plugin-jsx": "^1.0.6",
@@ -129,17 +134,9 @@
     "typescript": "^4.4.2",
     "vite": "^2.4.3",
     "vue": "^3.2.0-beta.5",
-    "vue-tsc": "^0.2.2"
-  },
-  "dependencies": {
-    "@types/ua-parser-js": "^0.7.36",
-    "@types/uuid": "^8.3.1",
-    "@typescript-eslint/eslint-plugin": "^4.30.0",
-    "@typescript-eslint/experimental-utils": "^4.30.0",
-    "@typescript-eslint/parser": "^4.30.0",
+    "vue-tsc": "^0.2.2",
     "axios": "^0.21.1",
     "lodash": "^4.17.21",
-    "tracker-statistics": "^0.1.17",
     "ua-parser-js": "^0.7.28",
     "uuid": "^8.3.2",
     "vconsole": "^3.9.1",
