@@ -1,7 +1,7 @@
 // @ts-ignore
 import { defineComponent, onMounted, onBeforeUnmount } from 'vue'
 import { useRouter } from 'vue-router'
-import trackerStatistics from '../../../src/tracker-statistics'
+import trackerStatistics from '../../../../src/tracker-statistics'
 import { v4 as uuidv4 } from 'uuid'
 
 const HomePage = defineComponent({
