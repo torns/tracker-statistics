@@ -10,3 +10,7 @@ compiled
 .awcache
 .rpt2_cache
 docs
+examples/uniapp/node_modules
+examples/uniapp/dist
+examples/vue3/node_modules
+examples/vue3/dist

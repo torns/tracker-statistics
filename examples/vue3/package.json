@@ -1,0 +1,21 @@
+{
+  "name": "vue3-frame",
+  "version": "1.0.0",
+  "scripts": {
+    "dev:vue3": "vite --host --open"
+  },
+  "devDependencies": {
+    "@types/uuid": "^8.3.1",
+    "@vitejs/plugin-vue": "^1.2.5",
+    "@vitejs/plugin-vue-jsx": "^1.1.6",
+    "@vue/babel-plugin-jsx": "^1.0.6",
+    "@vue/compiler-sfc": "^3.1.5",
+    "typescript": "^4.4.2",
+    "vite": "^2.4.3",
+    "vue": "^3.2.0-beta.5",
+    "vue-tsc": "^0.2.2",
+    "uuid": "^8.3.2",
+    "vconsole": "^3.9.1",
+    "vue-router": "4"
+  }
+}

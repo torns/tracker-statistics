@@ -1,0 +1,125 @@
+{
+	"easycom": {
+		"^u-(.*)": "uview-ui/components/u-$1/u-$1.vue"
+	},
+	"pages": [
+		{
+			"path": "pages/index/index",
+			"style": {
+				"navigationBarTitleText": "首页"
+			}
+		},
+		{
+			"path": "pages/test1/index",
+			"style": {
+				"navigationBarTitleText": "页面1"
+			}
+		},
+		{
+			"path": "pages/test2/index",
+			"style": {
+				"navigationBarTitleText": "页面2"
+			}
+		},
+		{
+			"path": "pages/test3/index",
+			"style": {
+				"navigationBarTitleText": "页面3"
+			}
+		},
+		{
+			"path": "pages/my/index",
+			"style": {
+				"navigationBarTitleText": "我的"
+			}
+		}
+	],
+	"subPackages": [
+		{
+			"root": "pagesA",
+			"pages": [
+				{
+					"path": "index/index",
+					"style": {
+						"navigationBarTitleText": "首页内容页"
+					}
+				}
+			]
+		},
+		{
+			"root": "pagesB",
+			"pages": [
+				{
+					"path": "index/index",
+					"style": {
+						"navigationBarTitleText": "我的内容页"
+					}
+				}
+			]
+		},
+		{
+			"root": "pagesC",
+			"pages": [
+				{
+					"path": "index/index",
+					"style": {
+						"navigationBarTitleText": "测试一内容页"
+					}
+				}
+			]
+		},
+		{
+			"root": "pagesD",
+			"pages": [
+				{
+					"path": "index/index",
+					"style": {
+						"navigationBarTitleText": "测试二内容页"
+					}
+				}
+			]
+		},
+		{
+			"root": "pagesE",
+			"pages": [
+				{
+					"path": "index/index",
+					"style": {
+						"navigationBarTitleText": "测试三内容页"
+					}
+				}
+			]
+		}
+	],
+	"preloadRule": {
+		"pages/index/index": {
+			"network": "all",
+			"packages": ["pagesA", "pagesB", "pagesC", "pagesD", "pagesE"]
+		}
+	},
+	"globalStyle": {
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "uni-app",
+		"navigationBarBackgroundColor": "#F8F8F8",
+		"backgroundColor": "#F8F8F8"
+	},
+	"tabBar": {
+		"list": [
+			{
+				"pagePath": "pages/index/index"
+			},
+			{
+				"pagePath": "pages/test1/index"
+			},
+			{
+				"pagePath": "pages/test2/index"
+			},
+			{
+				"pagePath": "pages/test3/index"
+			},
+			{
+				"pagePath": "pages/my/index"
+			}
+		]
+	}
+}
