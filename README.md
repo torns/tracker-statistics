@@ -43,6 +43,8 @@ interface InitProps {
   url: string                                 // 接口服务的地址
   method: Method                              // 接口的请求类型， Method 类型为 request 支持的请求类型
   storage?: 'localStorage' | 'sessionStorage' // 缓存数据存储位置，目前只支持 sessionStorage
+  usage?: 'code' | 'visualization'            // 使用方式，目前只支持 code
+  platform?: 'web' | 'wechat-miniprogram'     // 平台类型，目前只支持 web
 }
 ```
 
