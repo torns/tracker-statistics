@@ -1,4 +1,5 @@
 import { InitProps } from './types'
+import webStorage from '../../utils/web-storage'
 
 const init = ({
   method,
@@ -8,7 +9,7 @@ const init = ({
   platform = window ? 'web' : 'wechat-miniprogram'
 }: InitProps): void => {
   if (platform === 'web') {
-    window.sessionStorage.setItem('tempInit', JSON.stringify({ method, url, storage, usage, platform }))
+    webStorage.set('tempInit', { method, url, storage, usage, platform })
   }
 
   if (platform === 'wechat-miniprogram') {

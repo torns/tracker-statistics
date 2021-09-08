@@ -3,6 +3,7 @@ import { EventType } from '../types'
 import { ExposeProps } from './types'
 import prefab from '../../prefab'
 import { send } from '../../apis'
+import webStorage from '../../utils/web-storage'
 
 let ids: Array<number | string> = [] // 当前可视区域的曝光内容
 let timeStamp: number = 0 // 曝光内容的时长
@@ -18,8 +19,7 @@ const onScroll = (e: Event, dom: HTMLElement): void => {
   const minWidth: number = dom!.clientWidth <= innerWidth ? dom!.clientWidth : innerWidth // 当前父容器的款度
   let scrollTop: number = dom!.scrollTop // 当前父容器的滚动距离
   let status: boolean = true // 控制当前可视区域的内容是否在一小时内被曝光过
-  let prevTimeStamp: number =
-    JSON.parse(window.sessionStorage.getItem('tempExposePrevTimeStamp') as string) ?? 0 // 记录上一次的浏览总时长
+  let prevTimeStamp: number = webStorage.get('tempExposePrevTimeStamp', 0) // 记录上一次的浏览总时长
 
   Array.from(dom!.children).forEach((d: Element) => {
     const itemWidth: number = d.clientWidth // 曝光节点的宽度
@@ -39,23 +39,22 @@ const onScroll = (e: Event, dom: HTMLElement): void => {
       itemTop - scrollTop + itemHeight <= top + minHeight &&
       itemLeft + itemWidth <= left + minWidth
     ) {
-      const persistedIds = JSON.parse(window.sessionStorage.getItem('tempIds') as string) ?? []
-      const persistedTimeStamp =
-        JSON.parse(window.sessionStorage.getItem('tempTimeStamp') as string) ?? 0
+      const persistedIds = webStorage.get('tempIds', [])
+      const persistedTimeStamp = webStorage.get('tempTimeStamp', 0)
       const nowTimeStamp = new Date().getTime()
       const id = d.getAttribute('data-id') as string | number
 
       if (nowTimeStamp - persistedTimeStamp >= 3600000) {
-        window.sessionStorage.setItem('tempExposeIds', JSON.stringify([])) // 对ids进行持久化，解决一段时间内只能曝光一次的问题
-        window.sessionStorage.setItem('tempExposePrevTimeStamp', JSON.stringify(0)) // 清空浏览总时长
+        webStorage.set('tempExposeIds', []) // 对ids进行持久化，解决一段时间内只能曝光一次的问题
+        webStorage.set('tempExposePrevTimeStamp', 0) // 清空浏览总时长
       }
 
       if (persistedIds.indexOf(id) < 0) {
         ids.push(id)
         persistedIds.push(id)
         status = true
-        window.sessionStorage.setItem('tempExposeTimeStamp', JSON.stringify(nowTimeStamp)) // 记录时间戳，在一小时内没有曝光后对ids进行清空
-        window.sessionStorage.setItem('tempExposeIds', JSON.stringify(persistedIds)) // 对ids进行持久化，解决一段时间内只能曝光一次的问题
+        webStorage.set('tempExposeTimeStamp', nowTimeStamp) // 记录时间戳，在一小时内没有曝光后对ids进行清空
+        webStorage.set('tempExposeIds', persistedIds) // 对ids进行持久化，解决一段时间内只能曝光一次的问题
       } else {
         status = false
         console.log('展示区域内的信息以被曝光过！')
@@ -69,7 +68,7 @@ const onScroll = (e: Event, dom: HTMLElement): void => {
   }
 
   timeStamp = e.timeStamp - prevTimeStamp // 当前曝光时长减去之前曝光时长的总和
-  window.sessionStorage.setItem('tempExposePrevTimeStamp', JSON.stringify(e.timeStamp)) // 将新的曝光时长存入缓存中
+  webStorage.set('tempExposePrevTimeStamp', e.timeStamp) // 将新的曝光时长存入缓存中
 
   if (status) {
     ids.forEach(id => {
