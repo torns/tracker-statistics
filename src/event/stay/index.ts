@@ -20,7 +20,7 @@ const stay = {
       duration,
       userId,
       ...{ data },
-      ...{ prefab: isPrefab ? prefab() : {} }
+      ...{ prefab: isPrefab ? prefab.web : {} }
     })
   }
 }

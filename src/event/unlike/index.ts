@@ -10,7 +10,7 @@ const unlike = ({ name, itemId, userId, isPrefab = true, data = {} }: UnlikeProp
     itemId,
     userId,
     ...{ data },
-    ...{ prefab: isPrefab ? prefab() : {} }
+    ...{ prefab: isPrefab ? prefab.web : {} }
   })
 }
 

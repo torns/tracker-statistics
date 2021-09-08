@@ -9,7 +9,7 @@ const subscribe = ({ name, userId, isPrefab = true, data = {} }: SubscribeProps)
     name,
     userId,
     ...{ data },
-    ...{ prefab: isPrefab ? prefab() : {} }
+    ...{ prefab: isPrefab ? prefab.web : {} }
   })
 }
 

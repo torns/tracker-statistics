@@ -10,7 +10,7 @@ const collect = ({ name, itemId, userId, isPrefab = true, data = {} }: CollectPr
     itemId,
     userId,
     ...{ data },
-    ...{ prefab: isPrefab ? prefab() : {} }
+    ...{ prefab: isPrefab ? prefab.web : {} }
   })
 }
 

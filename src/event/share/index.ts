@@ -10,7 +10,7 @@ const share = ({ name, itemId, userId, isPrefab = true, data = {} }: ShareProps)
     itemId,
     userId,
     ...{ data },
-    ...{ prefab: isPrefab ? prefab() : {} }
+    ...{ prefab: isPrefab ? prefab.web : {} }
   })
 }
 

@@ -9,7 +9,7 @@ const buy = ({ itemId, userId, isPrefab = true, data = {} }: BuyProps): void => 
     itemId,
     userId,
     ...{ data },
-    ...{ prefab: isPrefab ? prefab() : {} }
+    ...{ prefab: isPrefab ? prefab.web : {} }
   })
 }
 
