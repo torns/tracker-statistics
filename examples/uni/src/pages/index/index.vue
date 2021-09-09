@@ -20,6 +20,11 @@ export default {
       url: 'http://192.168.0.196:17001/api/sdk/h5',
       method: 'post'
     })
+    trackerStatistics.like({
+      name: 'shop',
+      itemId: '1',
+      userId: '1'
+    })
     this.getStory()
   },
   methods: {

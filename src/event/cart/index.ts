@@ -9,7 +9,7 @@ const cart = ({ itemId, userId, isPrefab = true, data = {} }: CartProps): void =
     itemId,
     userId,
     ...{ data },
-    ...{ prefab: isPrefab ? prefab.web : {} }
+    ...{ prefab: isPrefab ? (window ? prefab.web : prefab.uni) : {} }
   })
 }
 

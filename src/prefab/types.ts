@@ -14,9 +14,9 @@ interface Url {
 interface Prefab extends IResult {
   sdkVersion: string
   network: string
-  url: Url
-  referrer: string
+  url?: Url
+  referrer?: string
   timestamp: number
 }
 
-export { Url, Prefab }
+export { Prefab }

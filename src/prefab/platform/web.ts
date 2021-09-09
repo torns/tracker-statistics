@@ -1,10 +1,10 @@
 import UAParser from 'ua-parser-js'
-import { Url, Prefab } from '../types'
+import { Prefab } from '../types'
 
 const _navigator: any = window.navigator
 
 const url = () => {
-  const _location: Url = window.location
+  const _location = window.location
 
   return {
     href: _location.href,

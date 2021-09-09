@@ -18,7 +18,7 @@ const comment = ({
     itemId,
     userId,
     ...{ data },
-    ...{ prefab: isPrefab ? prefab.web : {} }
+    ...{ prefab: isPrefab ? (window ? prefab.web : prefab.uni) : {} }
   })
 }
 

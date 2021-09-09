@@ -10,7 +10,7 @@ const like = ({ name, itemId, userId, isPrefab = true, data = {} }: LikeProps): 
     itemId,
     userId,
     ...{ data },
-    ...{ prefab: isPrefab ? prefab.web : {} }
+    ...{ prefab: isPrefab ? (window ? prefab.web : prefab.uni) : {} }
   })
 }
 

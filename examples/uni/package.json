@@ -60,6 +60,7 @@
     "node-sass": "^4.14.1",
     "regenerator-runtime": "^0.12.1",
     "sass-loader": "^7.0.0",
+    "tracker-statistics": "^0.7.4",
     "uview-ui": "^1.6.0",
     "vue": "^2.6.11",
     "vuex": "^3.2.0"

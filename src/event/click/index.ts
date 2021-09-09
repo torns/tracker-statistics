@@ -9,7 +9,7 @@ const click = ({ name, userId, isPrefab = true, data = {} }: ClickProps): void =
     name,
     userId,
     ...{ data },
-    ...{ prefab: isPrefab ? prefab.web : {} }
+    ...{ prefab: isPrefab ? (window ? prefab.web : prefab.uni) : {} }
   })
 }
 

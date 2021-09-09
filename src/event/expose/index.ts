@@ -89,7 +89,7 @@ const expose = ({ name, containerId, userId, isPrefab = true, data = {} }: Expos
     name,
     userId,
     ...{ data },
-    ...{ prefab: isPrefab ? prefab.web : {} }
+    ...{ prefab: isPrefab ? (window ? prefab.web : prefab.uni) : {} }
   }
 
   dom.addEventListener(
