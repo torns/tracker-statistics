@@ -5,7 +5,7 @@ interface InitProps {
   method: Method
   storage?: 'localStorage' | 'sessionStorage'
   usage?: 'code' | 'visualization'
-  platform?: 'web' | 'wechat-miniprogram'
+  platform?: 'web' | 'uni'
 }
 
 export { InitProps }

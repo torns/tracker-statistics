@@ -1,4 +1,4 @@
-import { expose } from './event/expose'
+// import { expose } from './event/expose'
 import { click } from './event/click'
 import { cart } from './event/cart'
 import { buy } from './event/buy'
@@ -8,11 +8,11 @@ import { unlike } from './event/unlike'
 import { comment } from './event/comment'
 import { share } from './event/share'
 import { subscribe } from './event/subscribe'
-import { stay } from './event/stay'
+// import { stay } from './event/stay'
 import { init } from './event/init'
 
 const trackerStatistics = {
-  expose,
+  // expose,
   click,
   cart,
   buy,
@@ -22,7 +22,7 @@ const trackerStatistics = {
   comment,
   share,
   subscribe,
-  stay,
+  // stay,
   init
 }
 

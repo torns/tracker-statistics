@@ -1,4 +1,3 @@
-
 const uniPrefab = (sdkVersion: string) => {
   return {
     sdkVersion,

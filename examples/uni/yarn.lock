@@ -1120,10 +1120,15 @@
     exec-sh "^0.3.2"
     minimist "^1.2.0"
 
-"@dcloudio/types@*", "@dcloudio/types@^2.0.16":
+"@dcloudio/types@*":
   version "2.2.16"
   resolved "https://registry.yarnpkg.com/@dcloudio/types/-/types-2.2.16.tgz#ee1d43ac29223ced094ee3b05a983f8aeacd1c0c"
   integrity sha512-Rvup52QOYc9dSlrTlFufgeUgZPfSRGdBV6+7oEUjQaxac7cwmQYcCqTXOarXSeq4AuH5qQNn3Jzx1rwmxJWknA==
+
+"@dcloudio/types@^2.0.16":
+  version "2.5.6"
+  resolved "https://registry.yarnpkg.com/@dcloudio/types/-/types-2.5.6.tgz#fba90cc0420e123eab09e895d5baceb0b73ebb21"
+  integrity sha512-SvJ2aRViG7aMn/Sf44FnKXcuqAnuYeG2X0NvU6iFiOnC/NKo1n8lWxGy88VnNINic0M1jRaeFKLOhosuAsTndQ==
 
 "@dcloudio/uni-app-plus@^2.0.0-27920200527001":
   version "2.0.0-31920210609001"
@@ -7638,10 +7643,10 @@ lru-cache@^6.0.0:
   dependencies:
     yallist "^4.0.0"
 
-luch-request@^3.0.4:
-  version "3.0.6"
-  resolved "https://registry.yarnpkg.com/luch-request/-/luch-request-3.0.6.tgz#5a2cf049cb8bf8157aa562f8e25b1ab95da42d9a"
-  integrity sha512-Usv3fcQzrPL1RsVVLTJjPrzyv7NGxPTXoz+hnmq/bDPpcQeKApD2iCSHjxey0zbA6LPB6MbPZL9zBtLKl+GznA==
+luch-request@^3.0.7:
+  version "3.0.7"
+  resolved "https://registry.yarnpkg.com/luch-request/-/luch-request-3.0.7.tgz#5894fc3d3ff62622b042c84953c1192ccdeafaa5"
+  integrity sha512-rYTgAO0CiAMjuotvwhtEREQ6mh/qdgYO2a+cKDv2VPnww/MdNaHMGMpsPY6VvJCOtfH7kV9lDujjuihhlu1xmg==
   dependencies:
     "@dcloudio/types" "^2.0.16"
 

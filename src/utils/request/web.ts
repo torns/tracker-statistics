@@ -18,4 +18,4 @@ service.interceptors.response.use((response: AxiosResponse) => {
   return response.data
 }, err)
 
-export { service as axios }
+export { service as webAxios }

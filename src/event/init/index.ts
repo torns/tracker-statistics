@@ -6,13 +6,15 @@ const init = ({
   url,
   storage = 'sessionStorage',
   usage = 'code',
-  platform = window ? 'web' : 'wechat-miniprogram'
+  platform = window ? 'web' : 'uni'
 }: InitProps): void => {
+  console.log(window)
+
   if (platform === 'web') {
     webStorage.set('tempInit', { method, url, storage, usage, platform })
   }
 
-  if (platform === 'wechat-miniprogram') {
+  if (platform === 'uni') {
     // @ts-ignore
     wx.setStorage({
       key: 'tempInit',

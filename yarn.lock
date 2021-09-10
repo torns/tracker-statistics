@@ -1148,6 +1148,11 @@
   dependencies:
     find-up "^2.1.0"
 
+"@dcloudio/types@^2.0.16":
+  version "2.5.6"
+  resolved "https://registry.yarnpkg.com/@dcloudio/types/-/types-2.5.6.tgz#fba90cc0420e123eab09e895d5baceb0b73ebb21"
+  integrity sha512-SvJ2aRViG7aMn/Sf44FnKXcuqAnuYeG2X0NvU6iFiOnC/NKo1n8lWxGy88VnNINic0M1jRaeFKLOhosuAsTndQ==
+
 "@iarna/cli@^1.2.0":
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/@iarna/cli/-/cli-1.2.0.tgz#0f7af5e851afe895104583c4ca07377a8094d641"
@@ -6535,6 +6540,13 @@ lru-cache@^6.0.0:
   integrity sha512-Jo6dJ04CmSjuznwJSS3pUeWmd/H0ffTlkXXgwZi+eq1UCmqQwCh+eLsYOYCwY991i2Fah4h1BEMCx4qThGbsiA==
   dependencies:
     yallist "^4.0.0"
+
+luch-request@^3.0.7:
+  version "3.0.7"
+  resolved "https://registry.yarnpkg.com/luch-request/-/luch-request-3.0.7.tgz#5894fc3d3ff62622b042c84953c1192ccdeafaa5"
+  integrity sha512-rYTgAO0CiAMjuotvwhtEREQ6mh/qdgYO2a+cKDv2VPnww/MdNaHMGMpsPY6VvJCOtfH7kV9lDujjuihhlu1xmg==
+  dependencies:
+    "@dcloudio/types" "^2.0.16"
 
 macos-release@^2.2.0:
   version "2.5.0"
